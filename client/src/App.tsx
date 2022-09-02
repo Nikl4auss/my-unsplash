@@ -1,14 +1,18 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { trpc } from './utils/trpc'
+import NavBar from './components/NavBar'
 
 function AppContent() {
-  const { data, error, isLoading } = trpc.useQuery(['hello'])
-  if (isLoading) return <p>Loading...</p>
-  if (data) return <h1>{data}</h1>
-  console.error(error)
   return (
-    <h1>Hello World</h1>
+    <Router>
+      <Routes>
+        <Route path='/' element={<NavBar />}>
+
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
