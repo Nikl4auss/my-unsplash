@@ -6,13 +6,16 @@ import NavBar from './components/NavBar'
 
 function AppContent() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<NavBar />}>
+    <main className='w-[90%] mt-4 mx-auto'>
+      <Router>
+        <Routes>
+          <Route path='/' element={<NavBar />}>
 
-        </Route>
-      </Routes>
-    </Router>
+          </Route>
+        </Routes>
+      </Router>
+
+    </main>
   )
 }
 
